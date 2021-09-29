@@ -16,7 +16,7 @@ namespace RockPaperScissors
             while (game)
             {
                 
-                Console.WriteLine("Rock, Paper, Scissors\n" +
+                Console.WriteLine("Rock, Paper, Scissors, Lizard, Spock\n" +
                     "Please use a number to select your choice\n" +
                     "1.Rock\n" +
                     "2.Paper\n" +
@@ -26,18 +26,21 @@ namespace RockPaperScissors
                     "6.Exit Game\n");
                 int userChoice = Convert.ToInt32(Console.ReadLine());
                 Random rnd = new Random();
-                int computerChoice = rnd.Next(1, 4);
+                int computerChoice = rnd.Next(1, 6);
                 Console.Clear();
-                if (userChoice == 4)
+                if (userChoice == 6)
                 {
                     game = false;
                 }
-                //lizard poisons Spock
-                //rock crushes lizard
-                //spock smashes scissors
-                //scissors decapitate lizard
-                //lizard eats paper
-                //paper disproves Spock
+                //Rock crushes scissors
+                //Paper covers rock
+                //Scissor cuts paper
+                //Lizard poisons Spock
+                //Rock crushes lizard
+                //Spock smashes scissors
+                //Scissors decapitate lizard
+                //Lizard eats paper
+                //Paper disproves Spock
                 //Spock vaporizes rock
                 switch (computerChoice)
                 {
@@ -60,9 +63,24 @@ namespace RockPaperScissors
                         {
                             Console.WriteLine("\nUser chose scissors\n" +
                                 "computer chose rock\n" +
-                                "Rock beats scissors: Sorry... You lose :(( ");
+                                "Rock smashes scissors: Sorry... You lose :(( ");
                             computerWin++;
                         }
+                        else if(userChoice == 4)
+                        {
+                            Console.WriteLine("\nUser chose lizard\n" +
+                                "computer chose rock\n" +
+                                "Rock crushes lizard: Sorry... You lose :(( ");
+                            computerWin++;
+                        }
+                        else if(userChoice == 5)
+                        {
+                            Console.WriteLine("\nUser chose spock\n" +
+                                "computer chose rock\n" +
+                                "Spock vaporizes rock: YOU WIN!");
+                            userWin++;
+                        }
+
                         Console.WriteLine("\n\nUser score is " + userWin);
                         Console.WriteLine("Computer score is " + computerWin + "\n\n");
                         break;
@@ -87,6 +105,20 @@ namespace RockPaperScissors
                                 "computer chose paper\n" +
                                 "Scissor beats paper: YOU WIN!");
                             userWin++;
+                        }
+                        else if (userChoice == 4)
+                        {
+                            Console.WriteLine("\nUser chose lizard\n" +
+                                "computer chose paper\n" +
+                                "Lizard eats paper: YOU WIN!");
+                            userWin++;
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("\nUser chose spock\n" +
+                                "computer chose paper\n" +
+                                "Paper disproves Spock: Sorry... You lose :((");
+                            computerWin++;
                         }
                         Console.WriteLine("\n\nUser score is " + userWin);
                         Console.WriteLine("Computer score is " + computerWin + "\n\n");
@@ -113,8 +145,100 @@ namespace RockPaperScissors
                                 "computer chose scissors\n" +
                                 "You tied!");
                         }
+                        else if (userChoice == 4)
+                        {
+                            Console.WriteLine("\nUser chose lizard\n" +
+                                "computer chose scissors\n" +
+                                "scissors decapitate lizard: Sorry... You lose :(( ");
+                            computerWin++;
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("\nUser chose spock\n" +
+                                "computer chose scissors\n" +
+                                "spock smashes scissors: YOU WIN!");
+                            userWin++;
+                        }
                         Console.WriteLine("\n\nUser score is " + userWin);
                         Console.WriteLine("Computer score is " + computerWin+ "\n\n");
+                        break;
+                    case 4:
+                        //If the computer chooses 4
+                        if (userChoice == 1)
+                        {
+                            Console.WriteLine("\nUser chose rock\n" +
+                                "computer chose lizard\n" +
+                                "Rock crushes lizard: YOU WIN!");
+                            userWin++;
+                        }
+                        else if (userChoice == 2)
+                        {
+                            Console.WriteLine("\nUser chose paper\n" +
+                                "computer chose lizard\n" +
+                                "Lizard eats paper: Sorry... You lose :(( ");
+                            computerWin++;
+                        }
+                        else if (userChoice == 3)
+                        {
+                            Console.WriteLine("\nUser chose scissors\n" +
+                                "computer chose lizard\n" +
+                                "Scissors decapitate lizard: YOU WIN!");
+                            userWin++;
+                        }
+                        else if (userChoice == 4)
+                        {
+                            Console.WriteLine("\nUser chose lizard\n" +
+                                "computer chose lizard\n" +
+                                "You tied!");
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("\nUser chose spock\n" +
+                                "computer chose lizard\n" +
+                                "Lizard poisons Spock: sorry... you lose :((");
+                            computerWin++;
+                        }
+                        Console.WriteLine("\n\nUser score is " + userWin);
+                        Console.WriteLine("Computer score is " + computerWin + "\n\n");
+                        break;
+                    case 5:
+                        //If the computer chooses 5
+                        if (userChoice == 1)
+                        {
+                            Console.WriteLine("\nUser chose rock\n" +
+                                "computer chose spock\n" +
+                                "Spock vaporizes rock: Sorry you... You lose :((");
+                            computerWin++;
+                        }
+                        else if (userChoice == 2)
+                        {
+                            Console.WriteLine("\nUser chose paper\n" +
+                                "computer chose spock\n" +
+                                "Paper disproves Spock: YOU WIN! ");
+                            userWin++;
+                        }
+                        else if (userChoice == 3)
+                        {
+                            Console.WriteLine("\nUser chose scissors\n" +
+                                "computer chose spock\n" +
+                                "Spock smashes scissors: Sorry you... You lose :((");
+                            computerWin++;
+                        }
+                        else if (userChoice == 4)
+                        {
+                            Console.WriteLine("\nUser chose lizard\n" +
+                                "computer chose spock\n" +
+                                "Lizard poisons spock: YOU WIN!");
+                            userWin++;
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("\nUser chose spock\n" +
+                                "computer chose spock\n" +
+                                "You tied!");
+                        }
+                        Console.WriteLine("\n\nUser score is " + userWin);
+                        Console.WriteLine("Computer score is " + computerWin + "\n\n");
                         break;
                     default:
                         break;
