@@ -10,6 +10,14 @@ namespace RockPaperScissors
     {
         public void Run()
         {
+                int origWidth, width;
+                int origHeight, height;
+                origWidth = Console.WindowWidth;
+                origHeight = Console.WindowHeight;
+                width = origWidth;
+                height = 52;
+                Console.SetWindowSize(width, height);
+
             bool game = true;
             int userWin = 0;
             int computerWin = 0;
