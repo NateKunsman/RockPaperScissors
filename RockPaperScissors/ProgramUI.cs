@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RockPaperScissors
@@ -10,22 +11,50 @@ namespace RockPaperScissors
     {
         public void Run()
         {
-                int origWidth, width;
-                int origHeight, height;
-                origWidth = Console.WindowWidth;
-                origHeight = Console.WindowHeight;
-                width = origWidth;
-                height = 52;
-                Console.SetWindowSize(width, height);
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    for (int j = 0; j < 20; j++)
+                    {
+                        Console.Clear();
+
+                        // lizard
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        var margin = "".PadLeft(j);
+                        Console.WriteLine(margin + "                                                   __");
+                        Console.WriteLine(margin + "                                              _.-~`  `~-.");
+                        Console.WriteLine(margin + @"                  _.--~~~---,.__          _.,;; .   -=(@'`\");
+                        Console.WriteLine(margin + "               .-`              ``~~~~--~~` ';;;       ____)");
+                        Console.WriteLine(margin + "            _.'            '.              ';;;;;    '`_.'");
+                        Console.WriteLine(margin + @"         .-~;`               `\           ' ';;;;;__.~`");
+                        Console.WriteLine(margin + "       .' .'          `'.     |           /  /;''");
+                        Console.WriteLine(margin + @"        \/      .---'''``)   /'-._____.--'\  \");
+                        Console.WriteLine(margin + @"       _/|    (`        /  /`              `\ \__");
+                        Console.WriteLine(margin + @"',    `/- \   \      __/  (_                /-\-\-`");
+                        Console.WriteLine(margin + @"  `;'-..___)   |     `/-\-\-`");
+                        Console.WriteLine(margin + "    `-.       .'");
+                        Console.WriteLine(margin + "       `~~~~``");
+                        
+                        Thread.Sleep(200);
+                        Console.ResetColor();
+                    }
+                }
+            }
+            int width = 90;
+            int height = 52;
+            Console.SetWindowSize(width, height);
 
             bool game = true;
             int userWin = 0;
             int computerWin = 0;
             while (game)
             {
-                //Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Rock, Paper, Scissors, Lizard, Spock\n" +
-                    "Rules:\n" +
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+\n" +
+                    "|R|o|c|k| |P|a|p|e|r| |S|c|i|s|s|o|r|s| |L|i|z|a|r|d| |S|p|o|c|k|\n" +
+                    "+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Rules:\n\n" +
                     "Scissors cut paper. Paper covers rock. Rock crushes lizard.\n" +
                     "Lizard poisons Spock. Spock smashes scissors. Scissors\n " +
                     "decapitates lizard. Lizard eats paper. Paper disproves Spock.\n " +
@@ -292,6 +321,7 @@ namespace RockPaperScissors
                             @"    |  |    |  `--'  | |  `--'  |    |  `----.|  `--'  | .----)   |   |  |____ " + "\n" +
                             @"    |__|     \______/   \______/     |_______| \______/  |_______/    |_______|");
             Console.ResetColor();
+            
         }
         public void youWin()
         {
